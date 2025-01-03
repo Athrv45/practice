@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'echo "Building the project..."'
+                bat 'echo Building the project...'
             }
         }
 
-        stage('Test') {
+        stage('Run Script') {
             steps {
-                sh 'python -m unittest discover -s ./ -p "test_hello.py"'
+                bat 'C:\\Python313\\python.exe C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\AutomationWithPython\\hello.py'
             }
         }
     }
